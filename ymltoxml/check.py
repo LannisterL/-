@@ -18,10 +18,10 @@ if __name__ == '__main__':
     gts = load_gt(gtpath)
 
     #bb是每张照片的bounding box, id是目标类别
-    bb = np.empty([400,4])
+    bb = np.empty([len(gts),4])
 
 
-    for i in range(400):
+    for i in range(len(gts)):
         bb[i] = gts[i][0]['obj_bb']
         right = bb[i][0]+bb[i][2]
         bottom = bb[i][1]+bb[i][3]
